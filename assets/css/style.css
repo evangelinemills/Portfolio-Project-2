@@ -6,6 +6,28 @@
     border: none;
 }
 
+body {
+    background-color: #303a2b;
+    font-family: "Bangers", sans-serif;
+}
+
+h1 {
+    font-family: "Bangers", sans-serif;
+    font-size: 5rem;
+    color: #c1bddb;
+    letter-spacing: 3px;
+    font-weight: 400;
+    text-align: center;
+    padding: 4px;
+}
+
+p {
+    text-align: center;
+    color: #c1bddb;
+    font-size: larger;
+    padding: 30px;
+}
+
 canvas {
     margin: 0px;
     padding: 0px;
@@ -13,5 +35,15 @@ canvas {
     flex-direction: column; /* arrage items on top of the other */
     justify-content: center;
     align-items: center;
-    box-shadow: #a2c7e5 20px 10px 50px;
+    box-shadow: #c1bddb 20px 10px 50px;
 }
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    height: 3rem;
+    margin: 30px auto;
+    width: 300px;
+}    
