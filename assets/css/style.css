@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+canvas {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column; /* arrage items on top of the other */
+    justify-content: center;
+    align-items: center;
+    box-shadow: #a2c7e5 20px 10px 50px;
+}
