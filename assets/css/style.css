@@ -37,7 +37,7 @@ canvas {
     justify-content: center;
     align-items: center;
     box-shadow: #c1bddb 20px 10px 50px;
-    position: absolute;
+    margin: 0 auto;
 }
 
 
