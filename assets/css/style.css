@@ -40,8 +40,6 @@ canvas {
     margin: 0 auto;
 }
 
-
-
 #menu {
     display: flex;
     flex-direction: row;
@@ -82,7 +80,7 @@ canvas {
     width: 2rem;
 }
 
-@media (hover: hover) {
+@media(hover:hover) {
     toggle-sound label:hover {
         color: #ff99c9;
     }
