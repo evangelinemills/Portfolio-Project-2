@@ -1,9 +1,9 @@
 const canvas = document.getElementById("game-area");
 const ctx = canvas.getContext("2d");
 
-class snakePart {
+class snakePart{
     constructor(x, y){
-        this.x=y;
+        this.x=x;
         this.y=y;
     }
 }
@@ -17,7 +17,7 @@ let tileSize=canvas.clientWidth/tileCount-2;
 let headX=10;
 let headY=10;
 
-// Snake Parts
+// Snake Parts array
 const snakeParts=[];
 let tailLength = 2;
 
@@ -42,7 +42,6 @@ function drawGame () {
     if(result) {
         return;
     }
-
     clearScreen();
     drawSnake();
     drawFood();
@@ -64,7 +63,7 @@ function isGameOver() {
         gameOver = true;
     }
 
-    else if(headX === tileCount) { //if hits right wall
+    else if(headX===tileCount) { //if hits right wall
         gameOver = true;
     }
 
@@ -78,44 +77,52 @@ function isGameOver() {
 
     //if hits own body
 
-    for(let i=0, i<snakeParts.length, i++){
+    for(let i=0; i<snakeParts.length; i++){
         let part=snakeParts[i];
-        if(part.x=== headX && part.y === headY) {
+        if(part.x===headX && part.y===headY) {
             gameOver = true;
             break;
         }
     }
 
     if(gameOver) {
-        ctx.fillStyle="#c1bddb";
-        ctx.font="60px 'Bangers'";
-        ctx.fillText("Game Over!!", canvas.clientWidth/6.5, canvas.clientHeight/2)
+
+        swal.fire({
+            title: 'Game Over!',
+            width: 600,
+            padding: '3em',
+            color: '#716add',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              left top
+              no-repeat
+            `
+          })
+
     }
 
     return gameOver;
 }
 
+// score function
+function drawScore() {
+    ctx.fillStyle="white";
+    ctx.font="30px 'Bangers'";
+    ctx.fillText("Score: ", +score, canvas.clientWidth-20, 60);
+}
+
 function clearScreen() {
     ctx.fillStyle= '#303a2b';
-    ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight)
 }
 
-drawGame();
-
-function drawGame() {
-    let speed = 7;
-
-    
-}
-
-function drawGame() {
-    clearScreen();
-    drawSnake();
-}
 // Draw Snake Function
-function drawSnake() {
+ function drawSnake() {
+
     ctx.fillStyle= '#ff99c9';
-    for(let i=0, i<snakeParts.length, i++){
+
+    for(let i=0;i<snakeParts.length;i++){
+
         let part = snakeParts[i]
          ctx.fillRect(part.x *tileCount, part.y *tileCount, tileSize, tileSize)
     }
@@ -128,7 +135,6 @@ function drawSnake() {
     ctx.fillRect(headX* tileCount, headY* tileCount, tileSize, tileSize)
 }
 
-
 // snake position function
 function changeSnakePosition() {
     headX = headX + xvelocity;
@@ -139,6 +145,16 @@ function changeSnakePosition() {
 function drawFood(){
     ctx.fillStyle="#58fcec";
     ctx.fillRect(foodX*tileCount, foodY*tileCount, tileSize, tileSize)
+}
+
+//detect collision
+function chackCollision() {
+    if(foodX==headX && foodY==headY) {
+        foodX=Math.floor(Math.random()*tileCount);
+        foodY=Math.floor(Math.random()*tileCount);
+        tailLength++;
+        score++;
+    }
 }
 
 document.body.addEventListener('keydown', keyDown);

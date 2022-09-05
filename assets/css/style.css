@@ -97,3 +97,4 @@ canvas {
 #toggle-sound input[type="checkbox"]:checked~label .sound-off {
     display: none;
 }
+
