@@ -17,6 +17,8 @@ let xvelocity=0;
 let yvelocity=0;
 
 // Draw Food
+let foodX=5;
+let foodY=5;
 
 // Score
 let score = 0;
@@ -26,6 +28,8 @@ let score = 0;
 
 function drawGame () {
     clearScreen();
+    drawSnake();
+    drawFood();
 }
 
 function clearScreen() {
@@ -45,10 +49,16 @@ function drawGame() {
     clearScreen();
     drawSnake();
 }
-
+// Draw Snake Function
 function drawSnake() {
     ctx.fillStyle= '#ff99c9';
     ctx.fillRect(headX* tileCount,headY* tileCount, tileSize,tileSize);
+}
+
+// Draw Food Function
+function drawFood(){
+    ctx.fillStyle="#58fcec";
+    ctx.fillRect(foodX*tileCount, foodY*tileCount, tileSize, tileSize)
 }
 
 document.body.addEventListener('keydown', keyDown);
