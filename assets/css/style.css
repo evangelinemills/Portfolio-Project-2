@@ -58,7 +58,11 @@ canvas {
 }
 
 #menu i {
-    font-size: x-large;
+    font-size: xx-large;
+    color: #ff99c9;
+    display: flex;
+    justify-content: center;
+    padding-top: 7px;
 }
 
 #menu .score {
@@ -98,3 +102,7 @@ canvas {
     display: none;
 }
 
+
+footer {
+    padding: 2rem;
+}
