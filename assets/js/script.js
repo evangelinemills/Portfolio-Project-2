@@ -35,7 +35,8 @@ let score = 0;
 
 
 
-function drawGame () {
+function drawGame() {
+
     changeSnakePosition();
     
     let result = isGameOver();
@@ -86,14 +87,14 @@ function isGameOver() {
     }
 
     if(gameOver) {
-
+        //SWAL
         swal.fire({
             title: 'Game Over!',
             width: 600,
             padding: '3em',
-            color: '#716add',
+            color: '#a2c7e5',
             backdrop: `
-              rgba(0,0,123,0.4)
+              rgba(162,199,229,0.4)
               left top
               no-repeat
             `
