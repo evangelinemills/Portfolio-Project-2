@@ -104,9 +104,7 @@ function isGameOver() {
 }
 // score function
 function drawScore() {
-    ctx.fillStyle="white";
-    ctx.font="30px 'Bangers'";
-    ctx.fillText("Score: ", +score, canvas.clientWidth-20, 60);
+    document.getElementById('score')
 }
 
 function clearScreen() {

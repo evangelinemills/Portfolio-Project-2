@@ -107,6 +107,9 @@ canvas {
     color: #ff99c9;
     font-family: "Bangers", sans-serif;
     font-size: x-large;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
 }
 
 footer {
