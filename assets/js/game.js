@@ -9,7 +9,7 @@ class snakePart{
 }
 
 
-let speed = 7;
+let speed = 5;
 let tileCount = 20;
 
 let tileSize=canvas.clientWidth/tileCount-2;
@@ -31,8 +31,6 @@ let foodY=5;
 
 // Score
 let score = 0;
-
-
 
 
 function drawGame() {
@@ -104,7 +102,6 @@ function isGameOver() {
 
     return gameOver;
 }
-
 // score function
 function drawScore() {
     ctx.fillStyle="white";

@@ -102,6 +102,12 @@ canvas {
     display: none;
 }
 
+#button-area button {
+    background: none;
+    color: #ff99c9;
+    font-family: "Bangers", sans-serif;
+    font-size: x-large;
+}
 
 footer {
     padding: 2rem;
