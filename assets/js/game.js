@@ -192,5 +192,29 @@ function resetGame() {
     scoreDisplay.innerHTML = score;
 }
 
+newGame.addEventListener('click', function reset() {
+    speed = 5;
+    tileCount = 20;
+
+    tileSize=canvas.clientWidth/tileCount-2;
+
+    headX=10;
+    headY=10;
+
+
+    snakeParts=[];
+    tailLength = 2;
+
+    xvelocity=0;
+    yvelocity=0;
+
+    foodX=5;
+    foodY=5;
+
+    score = 0;
+
+    startRefresh(true)
+})
+
 drawGame();
 
