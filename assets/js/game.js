@@ -1,4 +1,6 @@
+const scoreDisplay = document.getElementById("score");
 const canvas = document.getElementById("game-area");
+const newGame = document. getElementById("new-game");
 const ctx = canvas.getContext("2d");
 
 class snakePart{
@@ -102,10 +104,6 @@ function isGameOver() {
 
     return gameOver;
 }
-// score function
-function drawScore() {
-    document.getElementById('score')
-}
 
 function clearScreen() {
     ctx.fillStyle= '#303a2b';
@@ -187,6 +185,11 @@ function keyDown(event) {
         yvelocity=0;
         xvelocity=1;
     }
+}
+
+function resetGame() {
+    score = 0;
+    scoreDisplay.innerHTML = score;
 }
 
 drawGame();
