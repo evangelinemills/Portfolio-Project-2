@@ -1,6 +1,7 @@
 const scoreDisplay = document.getElementById("score");
 const canvas = document.getElementById("game-area");
-const newGame = document. getElementById("new-game");
+const newGame = document.getElementById("new-game");
+const gameButtons = document.getElementsByClassName("game-input");
 const ctx = canvas.getContext("2d");
 
 class snakePart{
@@ -20,7 +21,7 @@ let headX=10;
 let headY=10;
 
 // Snake Parts array
-const snakeParts=[];
+let snakeParts=[];
 let tailLength = 2;
 
 // Snake speed
@@ -34,10 +35,13 @@ let foodY=5;
 // Score
 let score = 0;
 
+let play = true
+
 
 function drawGame() {
 
     changeSnakePosition();
+
     let result = isGameOver();
 
     if(result) {
@@ -107,9 +111,9 @@ function isGameOver() {
 
 function startRefresh(toggle) {
     if (play) {
-        let reset = setTimeout(drawGame, 1000 / speed);
+        let bob = setTimeout(drawGame, 1000 / speed);
         if (toggle) {
-            clearTimeout(reset)
+            clearTimeout(bob)
         }
     }
 }
@@ -138,7 +142,7 @@ function clearScreen() {
     ctx.fillRect(headX* tileCount, headY* tileCount, tileSize, tileSize)
 }
 
-// snake position function
+// Snake position function
 function changeSnakePosition() {
     headX = headX + xvelocity;
     headY = headY + yvelocity;
@@ -156,10 +160,16 @@ function checkCollision() {
         foodX=Math.floor(Math.random()*tileCount);
         foodY=Math.floor(Math.random()*tileCount);
         tailLength++;
-        score++;
+        increaseScore()
     }
 }
 
+function increaseScore() {
+    score++
+    scoreDisplay.innerHTML = score
+}
+
+// control snake
 document.body.addEventListener('keydown', keyDown);
 
 function keyDown(event) {
@@ -201,28 +211,28 @@ function resetGame() {
     scoreDisplay.innerHTML = score;
 }
 
-newGame.addEventListener('click', function reset() {
+newGame.addEventListener('click', function bob() {
     speed = 5;
     tileCount = 20;
 
-    tileSize=canvas.clientWidth/tileCount-2;
+    tileSize = canvas.clientWidth/tileCount-2;
 
-    headX=10;
-    headY=10;
+    headX = 10;
+    headY = 10;
 
-
-    snakeParts=[];
+    snakeParts = [];
     tailLength = 2;
 
-    xvelocity=0;
-    yvelocity=0;
+    xvelocity = 0;
+    yvelocity = 0;
 
-    foodX=5;
-    foodY=5;
+    foodX = 5;
+    foodY = 5;
 
     score = 0;
 
     startRefresh(true)
+    drawGame()
 })
 
 drawGame();
