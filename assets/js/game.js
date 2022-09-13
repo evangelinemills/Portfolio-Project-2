@@ -38,18 +38,18 @@ let score = 0;
 function drawGame() {
 
     changeSnakePosition();
-    
     let result = isGameOver();
+
     if(result) {
         return;
     }
+
     clearScreen();
     drawSnake();
     drawFood();
 
-    chackCollision()
-    drawScore();
-    setTimeout(drawGame, 1000/speed);
+    checkCollision()
+    startRefresh(false)
 }
 
 //Game Over
@@ -105,6 +105,15 @@ function isGameOver() {
     return gameOver;
 }
 
+function startRefresh(toggle) {
+    if (play) {
+        let reset = setTimeout(drawGame, 1000 / speed);
+        if (toggle) {
+            clearTimeout(reset)
+        }
+    }
+}
+
 function clearScreen() {
     ctx.fillStyle= '#303a2b';
     ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight)
@@ -142,7 +151,7 @@ function drawFood(){
 }
 
 //detect collision
-function chackCollision() {
+function checkCollision() {
     if(foodX==headX && foodY==headY) {
         foodX=Math.floor(Math.random()*tileCount);
         foodY=Math.floor(Math.random()*tileCount);
