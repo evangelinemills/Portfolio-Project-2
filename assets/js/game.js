@@ -11,7 +11,6 @@ class snakePart{
     }
 }
 
-
 let speed = 5;
 let tileCount = 20;
 
@@ -36,7 +35,6 @@ let foodY=5;
 let score = 0;
 
 let play = true
-
 
 function drawGame() {
 
@@ -164,12 +162,13 @@ function checkCollision() {
     }
 }
 
+// Score 
 function increaseScore() {
     score++
     scoreDisplay.innerHTML = score
 }
 
-// control snake
+// Control snake
 document.body.addEventListener('keydown', keyDown);
 
 function keyDown(event) {
@@ -205,6 +204,37 @@ function keyDown(event) {
         xvelocity=1;
     }
 }
+
+//game button control for phone
+//UP
+document.getElementById("U").addEventListener("click", function() {
+    if(yvelocity==1)
+    return;
+    yvelocity=-1;
+    xvelocity=0;;
+});
+//Left
+document.getElementById("L").addEventListener("click", function() {
+    if(xvelocity==1)
+    return;
+    yvelocity=0;
+    xvelocity=-1;
+});
+//RIGHT
+document.getElementById("R").addEventListener("click", function(){
+    if(xvelocity==-1)
+    return;
+    yvelocity=0;
+    xvelocity=1;
+});
+//DOWN
+document.getElementById("D").addEventListener("click", function() {
+    if(yvelocity==-1)
+    return;
+    yvelocity=1;
+    xvelocity=0;
+});
+
 
 function resetGame() {
     score = 0;

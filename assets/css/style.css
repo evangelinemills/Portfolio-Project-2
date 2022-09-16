@@ -102,16 +102,29 @@ canvas {
     display: none;
 }
 
+#button-area {
+    text-align: center;
+    padding: 1rem;
+}
+
+#button-area div {
+    display: inline-flex;
+    flex-direction: row;
+}
+
 #button-area button {
     background: none;
     color: #ff99c9;
     font-family: "Bangers", sans-serif;
     font-size: x-large;
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
+}
+
+#button-area i {
+    font-size: xx-large;
+    color: #ff99c9;
+    padding: 1rem;
 }
 
 footer {
-    padding: 2rem;
+    padding: .5rem;
 }
