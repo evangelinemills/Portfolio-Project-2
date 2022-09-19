@@ -25,7 +25,7 @@ p {
     text-align: center;
     color: #c1bddb;
     font-size: larger;
-    padding: 30px;
+    padding: 20px;
     letter-spacing: 2px;
 }
 
@@ -108,7 +108,7 @@ table {
 
 #button-area {
     text-align: center;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 #button-area button {
@@ -121,7 +121,7 @@ table {
 #button-area i {
     font-size: xx-large;
     color: #ff99c9;
-    padding: 1rem;
+    padding: .7rem;
 }
 
 footer {
@@ -132,5 +132,21 @@ footer {
 @media only screen and (min-width: 850px) {
     table {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    h1 {
+        font-size: 2rem;
+        padding: 1px;
+    }
+
+    p {
+        font-size: small;
+        padding: 10px;
+    }
+
+    #menu {
+        margin: 10px auto;
     }
 }

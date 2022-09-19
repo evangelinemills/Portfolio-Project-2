@@ -62,6 +62,8 @@ The footer is plain and contains a simple copyright message.
 
 * [Am I Responsive?](https://ui.dev/amiresponsive)-This website was used to to generate a a responsiveness mockup images used at the top of this README file. 
 
+* [Favicon](https://favicon.io/emoji-favicons/worm/)-The worm logo from the browser tab was taken from here.
+
 ## Testing
 ----
 * ### HTML
@@ -90,8 +92,6 @@ No errors were found when passed throught [JSHint](https://jshint.com/).
 A [tutorial](https://www.section.io/engineering-education/how-to-build-a-snake-game-with-javascript/) was followed to assist in the coding of this website. 
 
 The code to assist the Game Over alert was adapted from [Sweet Alert](https://sweetalert2.github.io/#examples).
-
-The tab logo was taken from [Favicon](https://favicon.io/emoji-favicons/worm/).
 
 ### Media
 ----
