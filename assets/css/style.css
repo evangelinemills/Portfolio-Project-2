@@ -57,6 +57,9 @@ canvas {
     font-size: x-large;
 }
 
+button:hover {
+    opacity: 0.8;}
+
 #menu i {
     font-size: xx-large;
     color: #ff99c9;
