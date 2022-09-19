@@ -1,7 +1,6 @@
 const scoreDisplay = document.getElementById("score");
 const canvas = document.getElementById("game-area");
 const newGame = document.getElementById("new-game");
-//const gameButtons = document.getElementsByClassName("game-input");
 const ctx = canvas.getContext("2d");
 
 class snakePart{

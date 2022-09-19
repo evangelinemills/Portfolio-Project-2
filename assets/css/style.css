@@ -102,14 +102,13 @@ canvas {
     display: none;
 }
 
+table {
+    margin: 0 auto;
+}
+
 #button-area {
     text-align: center;
     padding: 1rem;
-}
-
-#button-area div {
-    display: inline-flex;
-    flex-direction: row;
 }
 
 #button-area button {
