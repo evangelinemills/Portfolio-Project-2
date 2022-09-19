@@ -127,3 +127,10 @@ table {
 footer {
     padding: .5rem;
 }
+
+/* display button controls on smaller screen devices*/
+@media only screen and (min-width: 850px) {
+    table {
+        display: none;
+    }
+}
