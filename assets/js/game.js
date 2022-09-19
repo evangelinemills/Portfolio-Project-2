@@ -3,6 +3,9 @@ const canvas = document.getElementById("game-area");
 const newGame = document.getElementById("new-game");
 const ctx = canvas.getContext("2d");
 
+//var audio = new Audio('arcade.mp3');
+//soundCheckbox = document.getElementById('sound');
+
 class snakePart{
     constructor(x, y){
         this.x=x;
@@ -52,6 +55,12 @@ function drawGame() {
     checkCollision();
     startRefresh(false);
 }
+
+//function playSound() {
+    if (soundCheckbox.checked) {
+        audio.play();
+    }
+};
 
 //Game Over
 function isGameOver() {
