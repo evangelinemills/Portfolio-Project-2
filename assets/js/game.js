@@ -15,7 +15,7 @@ class snakePart{
 let speed = 5;
 let tileCount = 20;
 
-let tileSize = canvas.clientWidth/tileCount-2;
+let tileSize = canvas.clientWidth / tileCount-2;
 
 let headX = 10;
 let headY = 10;
@@ -37,6 +37,11 @@ let score = 0;
 
 let play = true;
 
+/**
+ * This function loads and runs the game
+ * by drawing the snake and food
+ * and checking for collisions
+ */
 function drawGame() {
 
     changeSnakePosition();
@@ -64,7 +69,10 @@ soundCheckbox.addEventListener('click', () => {
     }  
 })
 
-// Game over
+/**
+ * Checks for collison with walls or own body
+ * @returns Game Over
+ */
 function isGameOver() {
     let gameOver = false;
 //check game commence
@@ -81,7 +89,8 @@ function isGameOver() {
             break;
         }
     }
-
+    
+    // Sweet Alert pop-up when Game-Over
     if(gameOver) {
         //SWAL
         swal.fire({
@@ -95,14 +104,17 @@ function isGameOver() {
               no-repeat
             `
           });
-
-          audioPlayer.pause();
-
+        
+        // Stops music when game over  
+        audioPlayer.pause();
     }
-
     return gameOver;
 }
 
+/**
+ * Controls speed of snake
+ * @param {boolean} toggle 
+ */
 function startRefresh(toggle) {
     if (play) {
         let reset = setTimeout(drawGame, 1000 / speed);
@@ -112,12 +124,19 @@ function startRefresh(toggle) {
     }
 }
 
+/**
+ * Initial layout of canvas screen for game start and 
+ * new-game
+ */
 function clearScreen() {
     ctx.fillStyle= '#303a2b';
     ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 }
 
-// Draw Snake Function
+/**
+ * A for loop that draws the snake body and 
+ * incremnts the length when it eats food
+ */
  function drawSnake() {
 
     ctx.fillStyle= '#ff99c9';
@@ -136,13 +155,18 @@ function clearScreen() {
     ctx.fillRect(headX* tileCount, headY* tileCount, tileSize, tileSize);
 }
 
-// Snake position function
+/**
+ * controls the direction of movement of the snake
+ */
 function changeSnakePosition() {
     headX = headX + xvelocity;
     headY = headY + yvelocity;
 }
 
-// Draw Food Function
+/**
+ * Creates the food on the canvas
+ * for the snake to eat
+ */
 function drawFood(){
     ctx.fillStyle = "#58fcec";
     ctx.fillRect(foodX*tileCount, foodY*tileCount, tileSize, tileSize);
@@ -158,15 +182,23 @@ function checkCollision() {
     }
 }
 
-// Score 
+/**
+ * Gets HTML element in the manu bar and prints the score
+ * as the snake eats food it increments by 1 point
+ */
 function increaseScore() {
     score++;
     scoreDisplay.innerHTML = score;
 }
 
-// Control snake
+// Control snake with keypad controls
 document.body.addEventListener('keydown', keyDown);
 
+/**
+ * 
+ * @param {*} event 
+ * @returns 
+ */
 function keyDown(event) {
 
     //Up
