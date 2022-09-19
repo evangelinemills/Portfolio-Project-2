@@ -5,7 +5,7 @@ WORMAGEDDON is a copy of the old fashioned Snake game we all know and love! It h
 ----
 [View the live project here.](https://evangelinemills.github.io/Portfolio-Project-2/)
 
-<--Am I Responsive Image-->
+<img src="assets/images/amiresponsive.jpg">
 
 ## Features
 
@@ -70,6 +70,8 @@ No errors were shown on the official [W3C](https://validator.w3.org/) validator.
 No errors were found on the official [W3C CSS](https://jigsaw.w3.org/css-validator/)validator.
 * ### JavaScript
 No errors were found when passed throught [JSHint](https://jshint.com/). 
+* ### DevTools - Lighthouse
+<img src="assets/images/devtools-lighthouse.png">
 
 ## Bugs
 ----
