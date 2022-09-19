@@ -1,10 +1,9 @@
 const scoreDisplay = document.getElementById("score");
 const canvas = document.getElementById("game-area");
 const newGame = document.getElementById("new-game");
+const soundCheckbox = document.getElementById("sound");
+const audioPlayer = documenmt.getElementById("music");
 const ctx = canvas.getContext("2d");
-
-//var audio = new Audio('arcade.mp3');
-//soundCheckbox = document.getElementById('sound');
 
 class snakePart{
     constructor(x, y){
@@ -56,38 +55,26 @@ function drawGame() {
     startRefresh(false);
 }
 
-//function playSound() {
+soundCheckbox.addEventListener("click", () => {
     if (soundCheckbox.checked) {
-        audio.play();
+        audioPlayer.play();
+    } else {
+        audioPlayer.pause();
     }
-};
+})
 
-//Game Over
 function isGameOver() {
     let gameOver = false;
 //check game commence
-    if(yvelocity===0 && xvelocity===0) {
+    if(yvelocity === 0 && xvelocity === 0) {
         return false;
     }
 
-    if(headX<0) { //if hits left wall
+     else if(headX < 0 || headX === tileCount || headY < 0 || headY === tileCount) { //if hits left wall
         gameOver = true;
-    }
-
-    else if(headX===tileCount) { //if hits right wall
-        gameOver = true;
-    }
-
-    else if(headY<0) {//if hits top wall
-        gameOver = true;
-    }
-
-    else if(headY===tileCount) {//if hits bottom wall
-        gameOver = true;
-    }
+     }
 
     //if hits own body
-
     for(let i=0; i<snakeParts.length; i++){
         let part=snakeParts[i];
         if(part.x===headX && part.y===headY) {
