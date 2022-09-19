@@ -91,6 +91,8 @@ A [tutorial](https://www.section.io/engineering-education/how-to-build-a-snake-g
 
 The code to assist the Game Over alert was adapted from [Sweet Alert](https://sweetalert2.github.io/#examples).
 
+The tab logo was taken from [Favicon](https://favicon.io/emoji-favicons/worm/).
+
 ### Media
 ----
 The background audio for the game was taken from [Pixabay]( https://pixabay.com/music/search/eating%20food/?order=None). 
