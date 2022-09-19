@@ -2,35 +2,35 @@ const scoreDisplay = document.getElementById("score");
 const canvas = document.getElementById("game-area");
 const newGame = document.getElementById("new-game");
 const soundCheckbox = document.getElementById("sound");
-const audioPlayer = documenmt.getElementById("music");
+const audioPlayer = document.getElementById("music");
 const ctx = canvas.getContext("2d");
 
 class snakePart{
     constructor(x, y){
-        this.x=x;
-        this.y=y;
+        this.x = x;
+        this.y = y;
     }
 }
 
 let speed = 5;
 let tileCount = 20;
 
-let tileSize=canvas.clientWidth/tileCount-2;
+let tileSize = canvas.clientWidth/tileCount-2;
 
-let headX=10;
-let headY=10;
+let headX = 10;
+let headY = 10;
 
 // Snake Parts array
-let snakeParts=[];
+let snakeParts = [];
 let tailLength = 2;
 
 // Snake speed
-let xvelocity=0;
-let yvelocity=0;
+let xvelocity = 0;
+let yvelocity = 0;
 
 // Draw Food
-let foodX=5;
-let foodY=5;
+let foodX = 5;
+let foodY = 5;
 
 // Score
 let score = 0;
@@ -55,29 +55,28 @@ function drawGame() {
     startRefresh(false);
 }
 
-soundCheckbox.addEventListener("click", () => {
+// Adds sound to toggle button in menu section
+soundCheckbox.addEventListener('click', () => {
     if (soundCheckbox.checked) {
         audioPlayer.play();
     } else {
         audioPlayer.pause();
-    }
+    }  
 })
 
+// Game over
 function isGameOver() {
     let gameOver = false;
 //check game commence
-    if(yvelocity === 0 && xvelocity === 0) {
+    if (headX < 0 || headX === tileCount || headY < 0 || headY === tileCount) {
+        gameOver = true;
+    } else if (yvelocity === 0 && xvelocity === 0) {
         return false;
     }
-
-     else if(headX < 0 || headX === tileCount || headY < 0 || headY === tileCount) { //if hits left wall
-        gameOver = true;
-     }
-
     //if hits own body
-    for(let i=0; i<snakeParts.length; i++){
-        let part=snakeParts[i];
-        if(part.x===headX && part.y===headY) {
+    for(let i = 0; i < snakeParts.length; i++){
+        let part = snakeParts[i];
+        if(part.x === headX && part.y === headY) {
             gameOver = true;
             break;
         }
@@ -97,6 +96,8 @@ function isGameOver() {
             `
           });
 
+          audioPlayer.pause();
+
     }
 
     return gameOver;
@@ -104,9 +105,9 @@ function isGameOver() {
 
 function startRefresh(toggle) {
     if (play) {
-        let bob = setTimeout(drawGame, 1000 / speed);
+        let reset = setTimeout(drawGame, 1000 / speed);
         if (toggle) {
-            clearTimeout(bob);
+            clearTimeout(reset);
         }
     }
 }
@@ -121,17 +122,17 @@ function clearScreen() {
 
     ctx.fillStyle= '#ff99c9';
 
-    for(let i=0;i<snakeParts.length;i++){
+    for(let i = 0; i < snakeParts.length; i++){
 
         let part = snakeParts[i];
          ctx.fillRect(part.x *tileCount, part.y *tileCount, tileSize, tileSize);
     }
    //increase snake length
    snakeParts.push(new snakePart(headX, headY));
-   if(snakeParts.length>tailLength) {
+   if(snakeParts.length > tailLength) {
         snakeParts.shift();
     } 
-    ctx.fillStyle="#c1bddb";
+    ctx.fillStyle = "#c1bddb";
     ctx.fillRect(headX* tileCount, headY* tileCount, tileSize, tileSize);
 }
 
@@ -143,15 +144,15 @@ function changeSnakePosition() {
 
 // Draw Food Function
 function drawFood(){
-    ctx.fillStyle="#58fcec";
+    ctx.fillStyle = "#58fcec";
     ctx.fillRect(foodX*tileCount, foodY*tileCount, tileSize, tileSize);
 }
 
 //detect collision
 function checkCollision() {
-    if(foodX==headX && foodY==headY) {
-        foodX=Math.floor(Math.random()*tileCount);
-        foodY=Math.floor(Math.random()*tileCount);
+    if(foodX == headX && foodY == headY) {
+        foodX = Math.floor(Math.random()*tileCount);
+        foodY = Math.floor(Math.random()*tileCount);
         tailLength++;
         increaseScore();
     }
@@ -203,31 +204,31 @@ function keyDown(event) {
 //game button control for phone
 //UP
 document.getElementById("U").addEventListener("click", function() {
-    if(yvelocity==1)
+    if(yvelocity == 1)
     return;
-    yvelocity=-1;
-    xvelocity=0;
+    yvelocity = -1;
+    xvelocity = 0;
 });
 //Left
 document.getElementById("L").addEventListener("click", function() {
-    if(xvelocity==1)
+    if(xvelocity == 1)
     return;
-    yvelocity=0;
-    xvelocity=-1;
+    yvelocity = 0;
+    xvelocity = -1;
 });
 //RIGHT
-document.getElementById("R").addEventListener("click", function(){
-    if(xvelocity==-1)
+document.getElementById("R").addEventListener("click", function() {
+    if(xvelocity == -1)
     return;
-    yvelocity=0;
-    xvelocity=1;
+    yvelocity = 0;
+    xvelocity = 1;
 });
 //DOWN
 document.getElementById("D").addEventListener("click", function() {
-    if(yvelocity==-1)
+    if(yvelocity == -1)
     return;
-    yvelocity=1;
-    xvelocity=0;
+    yvelocity = 1;
+    xvelocity = 0;
 });
 
 
@@ -236,7 +237,7 @@ function resetGame() {
     scoreDisplay.innerHTML = score;
 }
 
-newGame.addEventListener('click', function bob() {
+newGame.addEventListener('click', function reset() {
     speed = 5;
     tileCount = 20;
 
