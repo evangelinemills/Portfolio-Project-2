@@ -1,7 +1,7 @@
 const scoreDisplay = document.getElementById("score");
 const canvas = document.getElementById("game-area");
 const newGame = document.getElementById("new-game");
-const gameButtons = document.getElementsByClassName("game-input");
+//const gameButtons = document.getElementsByClassName("game-input");
 const ctx = canvas.getContext("2d");
 
 class snakePart{
@@ -34,7 +34,7 @@ let foodY=5;
 // Score
 let score = 0;
 
-let play = true
+let play = true;
 
 function drawGame() {
 
@@ -50,8 +50,8 @@ function drawGame() {
     drawSnake();
     drawFood();
 
-    checkCollision()
-    startRefresh(false)
+    checkCollision();
+    startRefresh(false);
 }
 
 //Game Over
@@ -100,7 +100,7 @@ function isGameOver() {
               left top
               no-repeat
             `
-          })
+          });
 
     }
 
@@ -111,14 +111,14 @@ function startRefresh(toggle) {
     if (play) {
         let bob = setTimeout(drawGame, 1000 / speed);
         if (toggle) {
-            clearTimeout(bob)
+            clearTimeout(bob);
         }
     }
 }
 
 function clearScreen() {
     ctx.fillStyle= '#303a2b';
-    ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight)
+    ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 }
 
 // Draw Snake Function
@@ -128,8 +128,8 @@ function clearScreen() {
 
     for(let i=0;i<snakeParts.length;i++){
 
-        let part = snakeParts[i]
-         ctx.fillRect(part.x *tileCount, part.y *tileCount, tileSize, tileSize)
+        let part = snakeParts[i];
+         ctx.fillRect(part.x *tileCount, part.y *tileCount, tileSize, tileSize);
     }
    //increase snake length
    snakeParts.push(new snakePart(headX, headY));
@@ -137,7 +137,7 @@ function clearScreen() {
         snakeParts.shift();
     } 
     ctx.fillStyle="#c1bddb";
-    ctx.fillRect(headX* tileCount, headY* tileCount, tileSize, tileSize)
+    ctx.fillRect(headX* tileCount, headY* tileCount, tileSize, tileSize);
 }
 
 // Snake position function
@@ -149,7 +149,7 @@ function changeSnakePosition() {
 // Draw Food Function
 function drawFood(){
     ctx.fillStyle="#58fcec";
-    ctx.fillRect(foodX*tileCount, foodY*tileCount, tileSize, tileSize)
+    ctx.fillRect(foodX*tileCount, foodY*tileCount, tileSize, tileSize);
 }
 
 //detect collision
@@ -158,14 +158,14 @@ function checkCollision() {
         foodX=Math.floor(Math.random()*tileCount);
         foodY=Math.floor(Math.random()*tileCount);
         tailLength++;
-        increaseScore()
+        increaseScore();
     }
 }
 
 // Score 
 function increaseScore() {
-    score++
-    scoreDisplay.innerHTML = score
+    score++;
+    scoreDisplay.innerHTML = score;
 }
 
 // Control snake
@@ -211,7 +211,7 @@ document.getElementById("U").addEventListener("click", function() {
     if(yvelocity==1)
     return;
     yvelocity=-1;
-    xvelocity=0;;
+    xvelocity=0;
 });
 //Left
 document.getElementById("L").addEventListener("click", function() {
@@ -261,9 +261,9 @@ newGame.addEventListener('click', function bob() {
 
     score = 0;
 
-    startRefresh(true)
-    drawGame()
-})
+    startRefresh(true);
+    drawGame();
+});
 
 drawGame();
 
