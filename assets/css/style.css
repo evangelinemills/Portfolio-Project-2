@@ -33,7 +33,7 @@ canvas {
     margin: 0px;
     padding: 0px;
     display: flex;
-    flex-direction: column; /* arrage items on top of the other */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: #c1bddb 20px 10px 50px;
