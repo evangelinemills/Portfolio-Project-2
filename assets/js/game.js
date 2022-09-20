@@ -94,7 +94,7 @@ function isGameOver() {
     if(gameOver) {
         //SWAL
         swal.fire({
-            title: 'Game Over!',
+            title: 'Game Over! Click "New Game" to play again!',
             width: 600,
             padding: '3em',
             color: '#a2c7e5',
