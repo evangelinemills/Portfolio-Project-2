@@ -72,7 +72,7 @@ The footer is plain and contains a simple copyright message. This avoids distrac
 
 * [Am I Responsive?](https://ui.dev/amiresponsive)-This website was used to to generate a a responsiveness mockup images used at the top of this README file. 
 
-* [Favicon](https://favicon.io/emoji-favicons/worm/)-The worm logo from the browser tab was taken from here.
+* [Favicon](https://favicon.io/emoji-favicons/worm/)-The worm logo for the browser tab was taken from here.
 
 ## Testing
 ----
@@ -97,6 +97,17 @@ The game has been thoroughly tested by the creator.
 
 ## Bugs
 ----
+* - Problem: When writing the startRefresh function that conrtols the speed of the snake it broke the game.
+  - Cause: I was able to locate eventually that I had not defined Play as variable but had used it in the function.
+  - Resolution: I defined Play with my variables and the game worked. 
+
+* - Problem: I inititally had the speed of the snake controlled in the drawGame function but when a 'New Game' was commenced the speed of the snake increased each time. 
+  - Cause: The way i had the code writted meant that it was constantly running in the background, therefore every time a new game started it re wrote the code ontop of the existing code, thus increasing the speed by double every time.
+  - Resolution: I re-wrote the speed of the snake in the startRefresh function using a Boolean. It now clears the game and restarts a whole new game every time the game is over. 
+
+* - Problem: 'New Game' button wouldn't work as expected when I wrote the newGame event listener code.
+  - Cause: I hadn't called the drawGame function at the end of the code.
+  - Resolution: I added in the missing code and the button worked as expected.
 
 ## Deployment
 ----
