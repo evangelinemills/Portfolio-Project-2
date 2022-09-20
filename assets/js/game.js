@@ -105,7 +105,7 @@ function isGameOver() {
             `
           });
         
-        // Stops music when game over  
+        // Stops music when Game Over  
         audioPlayer.pause();
     }
     return gameOver;
@@ -134,8 +134,8 @@ function clearScreen() {
 }
 
 /**
- * A for loop that draws the snake body and 
- * incremnts the length when it eats food
+ * A for loop that draws the snake body
+ * and controls the extension in length when eats food
  */
  function drawSnake() {
 
@@ -144,7 +144,7 @@ function clearScreen() {
     for(let i = 0; i < snakeParts.length; i++){
 
         let part = snakeParts[i];
-         ctx.fillRect(part.x *tileCount, part.y *tileCount, tileSize, tileSize);
+         ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize);
     }
    //increase snake length
    snakeParts.push(new snakePart(headX, headY));
@@ -156,7 +156,7 @@ function clearScreen() {
 }
 
 /**
- * controls the direction of movement of the snake
+ * Controls the direction of movement of the snake
  */
 function changeSnakePosition() {
     headX = headX + xvelocity;
@@ -172,11 +172,15 @@ function drawFood(){
     ctx.fillRect(foodX*tileCount, foodY*tileCount, tileSize, tileSize);
 }
 
-//detect collision
+/**
+ * Checks when snake eats food and
+ * Increases tail length x1 and 
+ * Increases score x1
+ */
 function checkCollision() {
     if(foodX == headX && foodY == headY) {
-        foodX = Math.floor(Math.random()*tileCount);
-        foodY = Math.floor(Math.random()*tileCount);
+        foodX = Math.floor(Math.random() * tileCount);
+        foodY = Math.floor(Math.random() * tileCount);
         tailLength++;
         increaseScore();
     }
@@ -195,9 +199,9 @@ function increaseScore() {
 document.body.addEventListener('keydown', keyDown);
 
 /**
- * 
+ * Keypad arrow controls
  * @param {*} event 
- * @returns 
+ * @returns Up, Down, Left, Right
  */
 function keyDown(event) {
 
@@ -233,7 +237,7 @@ function keyDown(event) {
     }
 }
 
-//game button control for phone
+//Game button control for phone
 //UP
 document.getElementById("U").addEventListener("click", function() {
     if(yvelocity == 1)
@@ -263,12 +267,8 @@ document.getElementById("D").addEventListener("click", function() {
     xvelocity = 0;
 });
 
-
-function resetGame() {
-    score = 0;
-    scoreDisplay.innerHTML = score;
-}
-
+// Redefines the variables for when Game Over
+// Do not change or game speed alters on New Game.
 newGame.addEventListener('click', function reset() {
     speed = 5;
     tileCount = 20;
