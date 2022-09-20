@@ -10,60 +10,68 @@
     <title>Wormageddon</title>
 </head>
 <body>
-<!--Header and Logo-->  
-    <div>
-        <h1> Wormageddon </h1>
-    </div>   
-    <div> 
-        <p>Use the arrow keys to begin!</p>
-        <p>See how much you can eat!</p>
-    </div>
-    <!-- Main Menu buttons-->
-    <div id="menu">
-        <button id="new-game" class="new-game" aria-label="New-Game">New Game</button>
-        <div class="score">
-            <div>Score: <span id="score">0</span></div>
+<!--Header and Logo--> 
+    <header>
+        <div>
+            <h1> Wormageddon </h1>
+        </div>   
+        <div> 
+            <p>Use the arrow keys to begin!</p>
+            <p>See how much you can eat!</p>
         </div>
-        <div id="toggle-sound">
-            <input type="checkbox" id="sound" aria-label="Sound">
-            <label for="sound">
-                <i class="fas fa-volume-mute sound-off"></i>
-                <i class="fas fa-volume-up sound-on"></i>
-            </label>
-        </div> 
-    </div>
+    </header>     
+    <!-- Main Menu buttons-->
+    <section>
+        <div id="menu">
+            <button id="new-game" class="new-game" aria-label="New-Game">New Game</button>
+            <div class="score">
+                <div>Score: <span id="score">0</span></div>
+            </div>
+            <div id="toggle-sound">
+                <input type="checkbox" id="sound" aria-label="Sound">
+                <label for="sound">
+                    <i class="fas fa-volume-mute sound-off"></i>
+                    <i class="fas fa-volume-up sound-on"></i>
+                </label>
+                <audio src="assets/audio/arcade.mp3" id="music"></audio>
+            </div> 
+        </div>
+    </section>    
     <!--Game Area-->
-    <div>
-        <canvas id="game-area" width="400" height="400"></canvas>
-    </div>
+    <section>
+        <div>
+            <canvas id="game-area" width="400" height="400"></canvas>
+        </div>
+    </section>    
     <!--Button Control-->
-     <div id="button-area">
-        <table>
-            <tr>
-                <td></td>
-                <td>
-                    <button class="game-input" type="button" id="U" aria-label="Up-Button"><i class="fa-solid fa-arrow-up"></i></button>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="game-input" type="button" id="L" aria-label="Left-Button"><i class="fa-solid fa-arrow-left"></i></button>
-                </td>
-                <td></td>
-                <td>
-                    <button class="game-input" type="button" id="R" aria-label="Right-Button"><i class="fa-solid fa-arrow-right"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <button class="game-input" type="button" id="D" aria-label="Down-Button"><i class="fa-solid fa-arrow-down"></i></button>
-                </td>
-                <td></td>
-            </tr>
-        </table>
-        <audio src="assets/audio/arcade.mp3" id="music"></audio>
+    <section>
+        <div id="button-area">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button class="game-input" type="button" id="U" aria-label="Up-Button"><i class="fa-solid fa-arrow-up"></i></button>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="game-input" type="button" id="L" aria-label="Left-Button"><i class="fa-solid fa-arrow-left"></i></button>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button class="game-input" type="button" id="R" aria-label="Right-Button"><i class="fa-solid fa-arrow-right"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button class="game-input" type="button" id="D" aria-label="Down-Button"><i class="fa-solid fa-arrow-down"></i></button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+    </section>        
     <!--Footer-->
     <footer id="footer">
         <div>
