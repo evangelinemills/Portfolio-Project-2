@@ -1,35 +1,45 @@
 # WORMAGEDDON
-## Portfolio Project 2 - JavaScript Essentials
+# Portfolio Project 2 - JavaScript Essentials
 ----
-WORMAGEDDON is a copy of the old fashioned Snake game we all know and love! It has been designed for fun purposes only. It has been designed using the arcade theme but with fun colours. It provides a nostalgic accessible break from modern day life, that is easy, fun and enjoyable.
+
+WORMAGGEDON is a copy of the old fashioned Snake game we all know and love! It has been created for fun purposes only. It has been designed using the arcade theme but with fun colours. It provides a nostalgic accessible break from modern day life, that is easy, fun and enjoyable. Anybody can play this game whether on a computer or mobile phone!
+
 ----
 [View the live project here.](https://evangelinemills.github.io/Portfolio-Project-2/)
+
+----
 
 <img src="assets/images/amiresponsive.jpg">
 
 ## Features
 
-#### Logo
+#### Header
 ----
-The logo is the name of the game. It is designed to be fun, quirky and enticing. Encouraging game users to take part.
+The logo is the name of the game. It is designed to be fun, quirky and enticing. Encouraging game users to take part. As it is a smiple game, the header provides brief instructions on how to begin the game and the aim of the game. 
+<img src="assets/images/header.jpg">
 
 #### Menu Bar
 ----
-* New Game: The user is able to click this button to clear the current game or commence a 'new game'.
+* New Game: The user is able to click this button to clear the current game or commence a 'New Game' when 'Game Over'.
 * Score: The score will go up as the user plays the game - the user can view it here. 
-* Sound: The sound plays in the background of the game - the user can toggle this on or off. 
+* Sound: The sound plays in the background of the game - the user can toggle this on or off. It always commences in the off position. This gives users the option to play in silence. 
+
+<img src="assets/images/menubar.jpg">
 
 #### Game Area
 ----
-The game area itself is the most important part of the screen. Its content is large and sits in the centre of the screen. It has a shadow effect to to make it appear raised off the screen. 
+The game area itself is the most important part of the screen. Its content is large and sits in the centre of the screen. It has a shadow effect to to make it appear raised off the screen. This section is where the game takes place. All other parts of the website are external to this section. 
+<img src="assets/images/canvas.jpg">
 
 #### Button Controls
 ----
-The game can be played on any device. Where a keypad is available - the arrow keys are programmed for use. On a mobile the on screen arrow button controls control the game. 
+The game can be played on any device. Where a keypad is available - the arrow keys are programmed for use. On a mobile the on-screen arrow button controls control the game. These buttons are hidden on larger screen sizes for simplicity. 
+<img src="assets/images/buttons.jpg">
 
 #### Footer
 ----
-The footer is plain and contains a simple copyright message. 
+The footer is plain and contains a simple copyright message. This avoids distraction from the game and it didnt warrant any external site links to socials. 
+<img src="assets/images/footer.jpg">
 
 ## Design
 ----
@@ -38,7 +48,7 @@ The footer is plain and contains a simple copyright message.
 * Colour Scheme: The colours were chosed to be edgy and fun. The Dark Green of the background allows the brighter colours to pop off the screen. They are accessible and easy to view colours. 
 <img src="assets/images/color-scheme.jpg.png">
 
-* Audio: The sound is optional. It is arcade game themed and provides a nostalgic edge to the game. 
+* Audio: The sound is optional depending on user preference. It is arcade game themed and provides a nostalgic edge to the game. 
 
 ## Technologies Used
 ----
@@ -69,11 +79,21 @@ The footer is plain and contains a simple copyright message.
 * ### HTML
 No errors were shown on the official [W3C](https://validator.w3.org/) validator.
 * ### CSS
-No errors were found on the official [W3C CSS](https://jigsaw.w3.org/css-validator/)validator.
+No errors were found on the official [W3C CSS](https://jigsaw.w3.org/css-validator/) validator.
 * ### JavaScript
 No errors were found when passed throught [JSHint](https://jshint.com/). 
 * ### DevTools - Lighthouse
+No errors were found when passed through [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) for both Desktop and Mobile.
 <img src="assets/images/devtools-lighthouse.png">
+
+The game has been thoroughly tested by the creator. 
+* The New Game button has been tested through use. It works if pressed in the middle of a game, or when 'Game Over'. It resets the screen, ready for the player to go again. 
+* Score - Having played the game multiple time - I have ensured the score increments correctly x1 each time the snake eats the food. 
+* Sound - The sound on/off toggle button works correctly. It always commences in the off position. The user has the choice to toggle it on or off. On 'Game Over' the music stops. 
+* Canvas - the game itself is working and functional. This has been thoroughly tested by the creator and other members of the public. The snake length correctly increases when it eats food. I have checked that the game ends when the snake crashes into any of the four walls or its own body. 
+* Sweet Alert - the sweet alert pops up when 'Game Over' and instructs the user to click the 'New Game' button to play again. The music correctly stops playing when the pop up appears. 
+* Button Control - the game can be controlled by keypad arrows or the button grid which is displayed on smaller screens. All of these function correctly and the snake moves in the correct direction when clicked or pressed. 
+* Responsiveness - the game works correctly on Google Chrome and Safari. It has been checked on DevTools multiple screen devices and functions correctly on the simulated devices. 
 
 ## Bugs
 ----
@@ -98,7 +118,6 @@ The code to assist the Game Over alert was adapted from [Sweet Alert](https://sw
 The background audio for the game was taken from [Pixabay]( https://pixabay.com/music/search/eating%20food/?order=None). 
 
 # Acknowledgements
-----
 - Thank you to my mentor Richard Wells for the feedback and recommended tools.
 - Thankyou to my family for the feedback and testing of the website.
 - Thank you to my peers on Slack for help and inspiration. 
