@@ -21,32 +21,26 @@
         </div>
     </header>     
     <!-- Main Menu buttons-->
-    <section>
-        <div id="menu">
-            <button id="new-game" class="new-game" aria-label="New-Game">New Game</button>
+    <div id="menu">
+        <button id="new-game" class="new-game" aria-label="New-Game">New Game</button>
             <div class="score">
                 <div>Score: <span id="score">0</span></div>
             </div>
-            <div id="toggle-sound">
-                <input type="checkbox" id="sound" aria-label="Sound">
-                <label for="sound">
-                    <i class="fas fa-volume-mute sound-off"></i>
-                    <i class="fas fa-volume-up sound-on"></i>
-                </label>
-                <audio src="assets/audio/arcade.mp3" id="music"></audio>
-            </div> 
-        </div>
-    </section>    
+        <div id="toggle-sound">
+            <input type="checkbox" id="sound" aria-label="Sound">
+            <label for="sound">
+                <i class="fas fa-volume-mute sound-off"></i>
+                <i class="fas fa-volume-up sound-on"></i>
+            </label>
+            <audio src="assets/audio/arcade.mp3" id="music"></audio>
+        </div> 
+    </div>  
     <!--Game Area-->
-    <section>
-        <div>
-            <canvas id="game-area" width="400" height="400"></canvas>
-        </div>
-    </section>    
+    <div>
+        <canvas id="game-area" width="400" height="400"></canvas>
+    </div>   
     <!--Button Control-->
-    <section>
-        <div id="button-area">
-            <table>
+            <table id="button-area">
                 <tr>
                     <td></td>
                     <td>
@@ -70,8 +64,7 @@
                     </td>
                     <td></td>
                 </tr>
-            </table>
-    </section>        
+            </table>      
     <!--Footer-->
     <footer id="footer">
         <div>
