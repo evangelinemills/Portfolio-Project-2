@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
+/* ---- Global Style */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@ body {
     font-family: "Bangers", sans-serif;
 }
 
+/* ----- Header */
 h1 {
     font-family: "Bangers", sans-serif;
     font-size: 5rem;
@@ -29,6 +31,7 @@ p {
     letter-spacing: 2px;
 }
 
+/*----- Game Area */
 canvas {
     margin: 0px;
     padding: 0px;
@@ -40,6 +43,7 @@ canvas {
     margin: 0 auto;
 }
 
+/* ----- Menu Buttons */
 #menu {
     display: flex;
     flex-direction: row;
@@ -105,6 +109,7 @@ button:hover {
     display: none;
 }
 
+/* ----- Button Controls */
 table {
     margin: 0 auto;
 }
@@ -127,11 +132,12 @@ table {
     padding: .7rem;
 }
 
+/* ----- Footer */
 footer {
     padding: .5rem;
 }
 
-/* display button controls on smaller screen devices*/
+/* ----- Media Queries */
 @media only screen and (min-width: 850px) {
     table {
         display: none;
