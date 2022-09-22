@@ -93,7 +93,7 @@ The game has been thoroughly tested by the creator.
 * Canvas - the game itself is working and functional. This has been thoroughly tested by the creator and other members of the public. The snake length correctly increases when it eats food. I have checked that the game ends when the snake crashes into any of the four walls or its own body. 
 * Sweet Alert - the sweet alert pops up when 'Game Over' and instructs the user to click the 'New Game' button to play again. The music correctly stops playing when the pop up appears. 
 * Button Control - the game can be controlled by keypad arrows or the button grid which is displayed on smaller screens. All of these function correctly and the snake moves in the correct direction when clicked or pressed. 
-* Responsiveness - the game works correctly on Google Chrome and Safari. It has been checked on DevTools multiple screen devices and functions correctly on the simulated devices. 
+* Responsiveness - the game works correctly on Google Chrome and Safari. It has been checked on DevTools multiple screen devices and functions correctly on the simulated devices. It has also been tested on family and friends various screen devices and functions appropriately.
 
 ## Bugs
 ----
